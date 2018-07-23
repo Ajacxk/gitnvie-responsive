@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Invie - tus mejores guitarras!!</title>
+        <meta charset="UTF-8">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat" rel="stylesheet">
+        <link rel="stylesheet" href="css/invie.css">
+        <!--<link rel="stylesheet" media="(max-width: 800px)" type="text/css" href="css/media-querie.css">-->
+    </head>
+    <body>
+        <section id="portada" class="portada background"> <!-- Portada -->
+            <header id="header" class="header contenedor"> <!-- Header -->             
+            <figure class="logotipo"> <!-- logotipo -->
+                <img src="images/invie.png" srcset="images/invie.png 1x, images/invie2x.png 2x" width="186" height="60" alt="Invie Logotipo.">
+            </figure>
+            <span class="burguer-button icon-menu" id="burguer-button"></span>
+            <nav class="menu" id="menu"> <!-- Menu -->
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>                       
+                    </li>
+                    <li>
+                        <a href="#guitarras">Guitarras</a>
+                    </li>
+
+                    <li>
+                        <a href="precios.html">Precios</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+            <div class="contenedor">
+                <h1 class="titulo">Guitarras <span>invi</span>sibles</h1><!-- titulo -->           
+                <h3 class="title-a">Sé la estrella de rock que siempre quisiste ser.</h3> <!-- Resumen -->
+                <button class="button">conoce más</button> <!-- boton -->
+            </div>
+        </section>
+        
+        <section id="guitarras" class="guitarras contenedor"> <!-- guitarras -->            
+            <h2>Nuestras Guitarras</h2>
+            <div class="video-demo">
+                <div class="video-responsive-contenedor">
+                    <iframe class="video-responsive-src" src="https://www.youtube.com/embed/7AnCscwAsFw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <!-- <video src="video/320x240.ogg"></video> -->
+            <article class="guitarra"><!-- guitarra 1 -->
+                <img class="derecha" data-src="images/invie-acustica.png|images/invie-acustica2x.png" alt="Guitarra Invie Acústica" width="350"/>
+                <div class="contenedor-guietarra-a">
+                    <h3 class="title-b">Invie Acústica</h3>
+                    <ol>
+                        <li>Estilo vintage</li>
+                        <li>Madera Pura</li>
+                        <li>Incluye estuche invisibles de aluminio</li>
+                    </ol>
+                </div>
+            </article>
+            <article class="guitarra"><!-- guitarra 2 -->
+                <img class="izquierda" data-src="images/invie-classic.png|images/invie-classic2x.png" alt="Guitarra Invie Acústica" width="350"/>
+                <div class="contenedor-guietarra-b">
+                    <h3 class="title-b">Invie Classic</h3>
+                    <ol>
+                        <li>Estilo vintage</li>
+                        <li>Liviana</li>
+                        <li>Inicia tu camino como rockstar</li>
+                    </ol>
+                </div>
+            </article>
+        </section>
+        <footer class="footer">
+            <div class="contenedor">
+                <div class="contacto">
+                    <img data-src="images/invie-white.png|images/invie-white2x.png" alt="logotipo blanco">
+                    <a href="tel:+595983145392"><strong>Telefono: </strong><span>302454583</span></a>
+                    <a href="mailto"><strong>E-mail</strong><span>ariel@gmail.com</span></a>
+                </div>
+                <form class="formulario">
+                    <div class="col1">                        
+                        <label for="nombre">Nombre</label>
+                        <input name="nombre" id="nombre" type="text" required placeholder="nombre"/>
+                        <label for="email">E-mail</label>
+                        <input name="email" id="email" type="email" required placeholder="nombre@email.com"/>
+                        <div class="sexo">
+                            <label for="mujer">
+                                <input type="radio" id="mujer" name="sexo" value="Mujer" checked> Mujer                        
+                            </label>
+                                <label for="hombre">
+                                    <input type="radio" id="hombre" name="sexo" value="Hombre"> Hombre                        
+                            </label>
+                        </div>
+                        <div class="intereses">
+                            <label for="cotizacion">
+                                <input type="checkbox" id="cotizacion" name="intereses" value="cotización" checked> Cotización
+                            </label>
+                            <label for="reclamos">
+                                <input type="checkbox" id="reclamos" name="intereses" value="reclamos"> Reclamos
+                            </label>
+                            <label for="comentario">
+                                <input type="checkbox" id="comentario" name="intereses" value="comentarios"> Comentarios
+                            </label>
+                            <label for="otros">
+                                <input type="checkbox" id="otros" name="intereses" value="otros"> Otros
+                            </label>                    
+                        </div>
+                </div>
+                <div class="col2">
+                    <label for="comentarios">Comentarios</label>
+                    <textarea name="comentarios" id="comentarios" cols="30" rows="10"></textarea>
+                    <input class="button" type="submit" value="Enviar"/>
+                </div>
+            </form>
+        </div>            
+        </footer>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+        <script type="text/javascript">
+            let consulta = window.matchMedia("(max-width: 500px)");
+            consulta.addListener(mediaQuery);
+            let burguerButton = document.getElementById("burguer-button");
+            let menu = document.getElementById("menu");
+
+            function mediaQuery(){
+                if(consulta.matches){
+                    burguerButton.addEventListener("touchstart", toggleMenu); 
+                    console.log("Se Cumplio");                    
+                }else{
+                    burguerButton.removeEventListener("touchstart", toggleMenu); 
+                    console.log("No Cumplido");
+                }
+            }
+
+            function toggleMenu(){
+                menu.classList.toggle("active");
+            } 
+            mediaQuery(); 
+
+            //Lazy loading
+            var bLazy = new Blazy({
+                selector: 'img'
+            });
+
+            //hammer
+            var $body = document.body;
+            var gestos = new Hammer($body);
+
+            gestos.on('swipeleft', function(ev) {
+                    console.log(ev);
+            });
+            gestos.on('swiperight', function(ev) {
+                    console.log(ev);
+            });
+
+        </script>
+    </body>
+</html>

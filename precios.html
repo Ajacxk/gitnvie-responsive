@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Precios</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat:400/600" rel="stylesheet">
+        <link rel="stylesheet" href="css/invie.css">
+    </head>
+    <body class="precios">
+        <div class="background">              
+        <header id="header" class="header contenedor"> <!-- Header -->             
+            <figure class="logotipo"> <!-- logotipo -->
+                <img src="images/invie.png" width="186" height="60" alt="Invie Logotipo.">
+            </figure>
+            <span class="burguer-button icon-menu" id="burguer-button"></span>
+            <nav class="menu" id="menu"> <!-- Menu -->
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>                       
+                    </li>
+                    <li>
+                        <a href="index.html#guitarras">Guitarras</a>
+                    </li>
+
+                    <li>
+                        <a href="precios.html">Precios</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+         </div>
+        <section class="tabla">
+            <div class="contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Modelo</th>
+                            <th>Precio</th>
+                            <th>Descripción</th>
+                            <th>Observación</th>
+                        </tr>
+                    </thead>
+                    <tbody>                   
+                        <tr>
+                            <td>Invie Classic</td>   
+                            <td>$1000</td>
+                            <td>Una guitarra muy profesional</td>
+                            <td>Ninguna</td>
+                        </tr>
+                        <tr>
+                            <td>Invie Classic</td>   
+                            <td>$1000</td>
+                            <td>Una guitarra muy profesional</td>
+                            <td>Ninguna</td>
+                        </tr>
+                        <tr>
+                            <td>Invie Classic</td>   
+                            <td>$1000</td>
+                            <td>Una guitarra muy profesional</td>
+                            <td>Ninguna</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>           
+        </section>        
+        <footer class="footer">
+            <div class="contenedor">
+                <div class="contacto">
+                    <img src="images/invie-white.png" alt="logotipo blanco">
+                    <a href="tel:+595983145392"><strong>Telefono: </strong><span>302454583</span></a>
+                    <a href="mailto"><strong>E-mail</strong><span>ariel@gmail.com</span></a>
+                </div>
+                <form class="formulario">
+                    <div class="col1">                        
+                        <label for="nombre">Nombre</label>
+                        <input name="nombre" id="nombre" type="text" required placeholder="nombre"/>
+                        <label for="email">E-mail</label>
+                        <input name="email" id="email" type="email" required placeholder="nombre@email.com"/>
+                        <div class="sexo">
+                            <label for="mujer">
+                                <input type="radio" id="mujer" name="sexo" value="Mujer" checked> Mujer                        
+                            </label>
+                                <label for="hombre">
+                                    <input type="radio" id="hombre" name="sexo" value="Hombre"> Hombre                        
+                            </label>
+                        </div>
+                        <div class="intereses">
+                            <label for="cotizacion">
+                                <input type="checkbox" id="cotizacion" name="intereses" value="cotización" checked> Cotización
+                            </label>
+                            <label for="reclamos">
+                                <input type="checkbox" id="reclamos" name="intereses" value="reclamos"> Reclamos
+                            </label>
+                            <label for="comentario">
+                                <input type="checkbox" id="comentario" name="intereses" value="comentarios"> Comentarios
+                            </label>
+                            <label for="otros">
+                                <input type="checkbox" id="otros" name="intereses" value="otros"> Otros
+                            </label>                    
+                        </div>
+                </div>
+                <div class="col2">
+                    <label for="comentarios">Comentarios</label>
+                    <textarea name="comentarios" id="comentarios" cols="30" rows="10"></textarea>
+                    <input class="button" type="submit" value="Enviar"/>
+                </div>
+            </form>
+        </div>
+            
+        </footer>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
+        <script type="text/javascript">
+            let consulta = window.matchMedia("(max-width: 500px)");
+            consulta.addListener(mediaQuery);
+            let burguerButton = document.getElementById("burguer-button");
+            let menu = document.getElementById("menu");
+
+            function mediaQuery(){
+                if(consulta.matches){
+                    burguerButton.addEventListener("touchstart", toggleMenu); 
+                    console.log("Se Cumplio");                    
+                }else{
+                    burguerButton.removeEventListener("touchstart", toggleMenu); 
+                    console.log("No Cumplido");
+                }
+            }
+
+            function toggleMenu(){
+                menu.classList.toggle("active");
+            } 
+            mediaQuery(); 
+
+            //Lazy loading
+            var bLazy = new Blazy({
+                selector: 'img'
+            });
+        </script>
+    </body>
+</html>
